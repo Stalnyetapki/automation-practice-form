@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class StudentRegistrationFormTest {
 
     @BeforeAll
-    static void setUp(){
+    static void setUp() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1100";
         Configuration.holdBrowserOpen = true;
     }
 
     @Test
-    void sendFormTest(){
+    void sendFormTest() {
         String name = "Harrier";
         String surname = "DuBois";
         String email = "harrier.duBois@gmail.com";
@@ -59,7 +59,7 @@ public class StudentRegistrationFormTest {
         $(".table-responsive tr:nth-child(4)>td:nth-child(2)").shouldHave(text(phoneNumber));
         $(".table-responsive tr:nth-child(5)>td:nth-child(2)").shouldHave(text("3 March," + yearOfBirth));
         $(".table-responsive tr:nth-child(6)>td:nth-child(2)").shouldHave(text(englishSubject));
-        $(".table-responsive tr:nth-child(7)>td:nth-child(2)").shouldHave(text(sportsSubject  + ", " + readingSubject));
+        $(".table-responsive tr:nth-child(7)>td:nth-child(2)").shouldHave(text(sportsSubject + ", " + readingSubject));
         $(".table-responsive tr:nth-child(8)>td:nth-child(2)").shouldHave(text(filename));
         $(".table-responsive tr:nth-child(9)>td:nth-child(2)").shouldHave(text(currentAddress));
         $(".table-responsive tr:nth-child(10)>td:nth-child(2)").shouldHave(text(state + " " + city));
