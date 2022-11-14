@@ -33,6 +33,8 @@ public class StudentRegistrationFormTest {
         String maleGender = "Male";
 
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
         $("#firstName").setValue(name);
         $("#lastName").setValue(surname);
         $("#userEmail").setValue(email);
