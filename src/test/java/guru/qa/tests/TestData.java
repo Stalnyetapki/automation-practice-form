@@ -13,7 +13,7 @@ public class TestData {
     static String[] ncrCities = {"Delhi", "Gurgaon", "Noida"};
     static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     static String[] hobbies = {"Reading", "Sports", "Music"};
-    static String[] genders = {"Male", "Female"};
+    static String[] genders = {"Male", "Female", "Other"};
 
     static Faker faker = new Faker();
     public static String name = faker.name().firstName(),

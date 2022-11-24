@@ -29,7 +29,7 @@ public class DataGenerator {
 
     public static String randomListItem(String[] values) {
 
-        int index = randInt(0, values.length);
+        int index = randInt(0, values.length - 1);
         return values[index];
     }
 }
