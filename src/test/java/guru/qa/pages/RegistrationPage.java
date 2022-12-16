@@ -40,42 +40,42 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Set {name} value in firstname input")
+    @Step("Set '{name}' value in first name input")
     public RegistrationPage setFirstName(String name) {
         firstNameInput.setValue(name);
 
         return this;
     }
 
-    @Step("Set {secondName} value in secondname input")
+    @Step("Set '{secondName}' value in second name input")
     public RegistrationPage setSecondName(String secondName) {
         lastNameInput.setValue(secondName);
 
         return this;
     }
 
-    @Step("Set {email} value in email input")
+    @Step("Set '{email}' value in email input")
     public RegistrationPage setEmail(String email) {
         emailInput.setValue(email);
 
         return this;
     }
 
-    @Step("Select {gender} gender")
+    @Step("Select '{gender}' gender")
     public RegistrationPage setGender(String gender) {
         genderRadioButton.$(byText(gender)).click();
 
         return this;
     }
 
-    @Step("Set {phoneNumber} in phoneNumber input")
+    @Step("Set '{phoneNumber}' in phoneNumber input")
     public RegistrationPage setPhoneNumber(String phoneNumber) {
         phoneNumberInput.setValue(phoneNumber);
 
         return this;
     }
 
-    @Step("Set user birth date - {day}.{month}.{year}")
+    @Step("Set user birth date - '{day}.{month}.{year}'")
     public RegistrationPage setBirthDate(String day, String month, String year) {
         dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
@@ -83,14 +83,14 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Set the next subject {subject}")
+    @Step("Set the next subject '{subject}'")
     public RegistrationPage selectSubject(String subject) {
         subjectsInput.setValue(subject).pressEnter();
 
         return this;
     }
 
-    @Step("Select user hobby - {hobby}")
+    @Step("Select user hobby - '{hobby}'")
     public RegistrationPage selectHobby(String hobby) {
         hobbyCheckBoxes.$(byText(hobby)).click();
         return this;
@@ -140,7 +140,7 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Match the field values entered in the form with the data in the modal window")
+    @Step("Match the value - '{value}' of '{key}'field entered in the form with the data in the modal window")
     public RegistrationPage verifyResult(String key, String value) {
         registrationResultsModal.verifyResult(key, value);
 
