@@ -1,5 +1,7 @@
 package guru.qa.tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import static guru.qa.tests.TestData.*;
 
