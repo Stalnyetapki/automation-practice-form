@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Map;
+
 public class TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -17,15 +19,18 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remoteURL", "selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
+        capabilities.setCapability("browserName", System.getProperty("browserName", "chrome"));
+        capabilities.setCapability("browserVersion", System.getProperty("browserVersion", "100.0"));
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
     }
-
 
     @BeforeEach
     void beforeEach(){
